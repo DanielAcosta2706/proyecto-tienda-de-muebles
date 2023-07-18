@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Proyecto-Integrador</title> -->
+    <%-include('../partials/head') %>
+  </head>
+  <body>
+    <!-- <nav>
+      <a href="/tienda/"
+        ><img src="/imagenes/logo.svg" alt="logo Tienda Mueble"
+      /></a>
+      <ul class="menu">
+        <li class="item-menu">
+          <a class="item-link" href="/tienda/productos">Productos</a>
+        </li>
+        <li class="item-menu">
+          <a class="item-link" href="/tienda/nuevoProducto">Agregar Producto</a>
+        </li>
+      </ul>
+    </nav> -->
+    <%-include('../partials/nav') %>
+    <header>
+      <h1 class="titulo-blanco">
+        Tienda<br />
+        de<br />
+        Muebles
+      </h1>
+      <img src="/imagenes/foto-living.jpg" alt="imagen-living" />
+    </header>
+
+    <main class="cont-padre">
+      <% data.forEach((prod)=>{%>
+      <div class="card">
+        <img class="img-card" src="<%= prod.imagen%>" alt="imagen=producto" />
+        <p class="desc-card"><%= prod.descripcion%></p>
+        <a class="boton-ver" href="#">Ver Mas</a>
+      </div>
+      <% })%>
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <img src="/imagenes/logo.svg" alt="logo Tienda Mueble" />
+        <h2 class="titulo-blanco titulo-foot">Tienda de Muebles</h2>
+      </div>
+      <p>
+        Imagenes pertenecientes a
+        <a href="https://www.freepik.es/">https://www.freepik.es/</a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+CREATE DATABASE tiendamueble;
+
+use tiendamueble;
+
+CREATE TABLE productos(
+	id INT(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	producto VARCHAR(200) NOT NULL,
+    	categoria VARCHAR(200) NOT NULL,
+    	imagen VARCHAR(200) NOT NULL,
+    	descripcion TEXT NOT NULL,
+    	precio INT(6) NOT NULL
+);
+
+CREATE TABLE categorias(
+	id INT(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nombre_categoria VARCHAR(200) NOT NULL,
+	descripcion TEXT NOT NULL,
+	imagen VARCHAR(200) NOT NULL
+);
+
+INSERT INTO productos (producto, categoria, imagen, descripcion, precio)
+VALUES ("Nilda-Comedor", "mesada", "/imagenes/Nilda-Comedor.png", "Mesada ideal para las reuniones con gran cantidad de invitados o grandes familias", 20000),
+("Tea-Ratona", "mesada", "/imagenes/Tea-ratona.png", "Hecha para un living, dando una sensacion de comodidad y confort", 15000),
+("Lino-Palido", "silla", "/imagenes/Lino-palido.png", "Muy recomendadas para los estilos delicados, muy comodas y calidas", 5000),
+("Sea-Rustico", "silla", "/imagenes/Sea-rustico.png", "Ideal para un estilo simple, sillones nobles y comodas para un living o recibidor", 5500),
+("Pampa", "cajonera", "/imagenes/pampa.png", "Cajonera recomendable para habitaciones, con amplios cajones", 65000),
+("Estilo-Madera", "cajonera", "/imagenes/estilo-madera.png", "Ideal para ambientes de grandes colores, dandole un toque hogareño a tus ambientes", 53200);
+
+INSERT INTO categorias (nombre_categoria, imagen, descripcion)
+VALUES ("sillas", "/imagenes/silla.jpg", "Consulta por nuestros comodos sillones y sillas"),
+("mesas", "/imagenes/mesa.jpg", "No te pierdas nuestra amplia variedad de mesas y mesadas"),
+("cajoneras", "/imagenes/mueble.jpg", "Contamos con una gran variedad de cajoneras");
